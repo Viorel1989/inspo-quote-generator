@@ -1,0 +1,117 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-inspoquotegenerator-dev-103403-authRole",
+      "UnauthRoleArn": "arn:aws:iam::967126712701:role/amplify-inspoquotegenerator-dev-103403-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::967126712701:role/amplify-inspoquotegenerator-dev-103403-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-inspoquotegenerator-dev-103403-deployment",
+      "UnauthRoleName": "amplify-inspoquotegenerator-dev-103403-unauthRole",
+      "StackName": "amplify-inspoquotegenerator-dev-103403",
+      "StackId": "arn:aws:cloudformation:eu-central-1:967126712701:stack/amplify-inspoquotegenerator-dev-103403/5a953cb0-febc-11ed-9d63-0abbe649d9e2",
+      "AmplifyAppId": "d25r9qypikmrfs"
+    }
+  },
+  "api": {
+    "inspoquotegenerator": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AWS_IAM"
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 7,
+                "apiKeyExpirationDate": "2023-06-06T07:55:42.393Z",
+                "description": "API Key for inspirational qoute generator"
+              }
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "7g6d47qmxrcqha656tmnltyetu",
+        "GraphQLAPIEndpointOutput": "https://66brve7gsbdjjmzfe6ylvuwcg4.appsync-api.eu-central-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-heakadw5kvdyzlr5pglqshv7oe"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-inspoquotegenerator-dev-103403-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiinspoquotegenerator"
+      },
+      "lastPushTimeStamp": "2023-05-30T09:07:51.500Z",
+      "lastPushDirHash": "Q97M0VMfdQ4Ihjj8vRcON32Ualk="
+    }
+  },
+  "auth": {
+    "inspoquotegenerator180fbcb9": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "lastPushTimeStamp": "2023-05-30T09:07:49.306Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-inspoquotegenerator-dev-103403-deployment/amplify-cfn-templates/auth/inspoquotegenerator180fbcb9-cloudformation-template.json",
+        "logicalId": "authinspoquotegenerator180fbcb9"
+      },
+      "output": {
+        "UserPoolId": "eu-central-1_hSm6OjOde",
+        "AppClientIDWeb": "21gh6m24kc48o31leblgmmvdhq",
+        "AppClientID": "6062r5v9eotmrb5i1okcn5cg0p",
+        "IdentityPoolId": "eu-central-1:86cc4c4a-1230-42b4-b3bd-c17213e4d906",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-central-1:967126712701:userpool/eu-central-1_hSm6OjOde",
+        "IdentityPoolName": "inspoquotegenerator180fbcb9_identitypool_180fbcb9__dev",
+        "UserPoolName": "inspoquotegenerator180fbcb9_userpool_180fbcb9"
+      },
+      "lastPushDirHash": "JcEezFN8IeYetvgXB9uR4ESZttA="
+    }
+  },
+  "function": {
+    "inspoqouteLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2023-05-30T08:54:59.259Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-05-30T08:54:59.298Z",
+      "distZipFilename": "inspoqouteLambda-78497039414d6e79426a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-inspoquotegenerator-dev-103403-deployment",
+        "s3Key": "amplify-builds/inspoqouteLambda-78497039414d6e79426a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-inspoquotegenerator-dev-103403-deployment/amplify-cfn-templates/function/inspoqouteLambda-cloudformation-template.json",
+        "logicalId": "functioninspoqouteLambda"
+      },
+      "lastPushTimeStamp": "2023-05-30T09:07:49.317Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::967126712701:role/inspoquotegeneratorLambdaRolea9cfff7f-dev",
+        "Region": "eu-central-1",
+        "Arn": "arn:aws:lambda:eu-central-1:967126712701:function:inspoqouteLambda-dev",
+        "Name": "inspoqouteLambda-dev",
+        "LambdaExecutionRole": "inspoquotegeneratorLambdaRolea9cfff7f-dev"
+      },
+      "lastPushDirHash": "HPX5+nJm/u4iQxcoMaKn4yo3mh4="
+    }
+  }
+}

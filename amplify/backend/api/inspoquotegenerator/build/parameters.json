@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "inspoquotegenerator",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-inspoquotegenerator-dev-103403-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/3b73c7d162107b79ad77c5e6488a7f9cddb235c3"
+}

@@ -1,0 +1,232 @@
+type Query {
+  generateAQuote(input: AWSJSON!): String
+  getQuoteAppData(id: ID!): QuoteAppData
+  listQuoteAppData(filter: ModelQuoteAppDataFilterInput, limit: Int, nextToken: String): ModelQuoteAppDataConnection
+  quotesQueryName(queryName: String!, sortDirection: ModelSortDirection, filter: ModelQuoteAppDataFilterInput, limit: Int, nextToken: String): ModelQuoteAppDataConnection
+}
+
+type QuoteAppData {
+  id: ID!
+  queryName: String!
+  quotesGenerated: Int!
+  createdAt: String!
+  updatedAt: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelQuoteAppDataConnection {
+  items: [QuoteAppData]!
+  nextToken: String
+}
+
+input ModelQuoteAppDataFilterInput {
+  id: ModelIDInput
+  queryName: ModelStringInput
+  quotesGenerated: ModelIntInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelQuoteAppDataFilterInput]
+  or: [ModelQuoteAppDataFilterInput]
+  not: ModelQuoteAppDataFilterInput
+}
+
+input ModelQuoteAppDataConditionInput {
+  queryName: ModelStringInput
+  quotesGenerated: ModelIntInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelQuoteAppDataConditionInput]
+  or: [ModelQuoteAppDataConditionInput]
+  not: ModelQuoteAppDataConditionInput
+}
+
+input CreateQuoteAppDataInput {
+  id: ID
+  queryName: String!
+  quotesGenerated: Int!
+  createdAt: String
+  updatedAt: String
+}
+
+input UpdateQuoteAppDataInput {
+  id: ID!
+  queryName: String
+  quotesGenerated: Int
+  createdAt: String
+  updatedAt: String
+}
+
+input DeleteQuoteAppDataInput {
+  id: ID!
+}
+
+type Mutation {
+  createQuoteAppData(input: CreateQuoteAppDataInput!, condition: ModelQuoteAppDataConditionInput): QuoteAppData
+  updateQuoteAppData(input: UpdateQuoteAppDataInput!, condition: ModelQuoteAppDataConditionInput): QuoteAppData
+  deleteQuoteAppData(input: DeleteQuoteAppDataInput!, condition: ModelQuoteAppDataConditionInput): QuoteAppData
+}
+
+input ModelSubscriptionQuoteAppDataFilterInput {
+  id: ModelSubscriptionIDInput
+  queryName: ModelSubscriptionStringInput
+  quotesGenerated: ModelSubscriptionIntInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionQuoteAppDataFilterInput]
+  or: [ModelSubscriptionQuoteAppDataFilterInput]
+}
+
+type Subscription {
+  onCreateQuoteAppData(filter: ModelSubscriptionQuoteAppDataFilterInput): QuoteAppData @aws_subscribe(mutations: ["createQuoteAppData"])
+  onUpdateQuoteAppData(filter: ModelSubscriptionQuoteAppDataFilterInput): QuoteAppData @aws_subscribe(mutations: ["updateQuoteAppData"])
+  onDeleteQuoteAppData(filter: ModelSubscriptionQuoteAppDataFilterInput): QuoteAppData @aws_subscribe(mutations: ["deleteQuoteAppData"])
+}
