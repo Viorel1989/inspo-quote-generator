@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-inspoquotegenerator-dev-103403-authRole",
+      "UnauthRoleArn": "arn:aws:iam::967126712701:role/amplify-inspoquotegenerator-dev-103403-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::967126712701:role/amplify-inspoquotegenerator-dev-103403-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-inspoquotegenerator-dev-103403-deployment",
+      "UnauthRoleName": "amplify-inspoquotegenerator-dev-103403-unauthRole",
+      "StackName": "amplify-inspoquotegenerator-dev-103403",
+      "StackId": "arn:aws:cloudformation:eu-central-1:967126712701:stack/amplify-inspoquotegenerator-dev-103403/5a953cb0-febc-11ed-9d63-0abbe649d9e2",
+      "AmplifyAppId": "d25r9qypikmrfs"
+    },
+    "categories": {
+      "auth": {
+        "inspoquotegenerator180fbcb9": {}
+      },
+      "function": {
+        "inspoqouteLambda": {
+          "deploymentBucketName": "amplify-inspoquotegenerator-dev-103403-deployment",
+          "s3Key": "amplify-builds/inspoqouteLambda-78497039414d6e79426a-build.zip"
+        }
+      },
+      "api": {
+        "inspoquotegenerator": {}
+      }
+    }
+  }
+}
